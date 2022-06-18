@@ -6,10 +6,10 @@ import "flatpickr/dist/flatpickr.min.css";
 refs ={
     time: document.querySelector('#datetime-picker'),
     startButton: document.querySelector('button[data-start]'),
-    days: document.querySelector('[data-days]'),
-    hours: document.querySelector('[data-hours]'),
-    minutes: document.querySelector('[data-minutes]'),
-    seconds: document.querySelector('[data-seconds]'),
+    daysCount: document.querySelector('[data-days]'),
+    hoursCount: document.querySelector('[data-hours]'),
+    minutesCount: document.querySelector('[data-minutes]'),
+    secondsCount: document.querySelector('[data-seconds]'),
 };
 
 let delta = null;
@@ -88,8 +88,8 @@ function convertMs(ms) {
   };
 
   function addTextContent(deltaTime){
-    refs.days.textContent = addLeadingZero(convertMs(deltaTime).days);
-    refs.hours.textContent = addLeadingZero(convertMs(deltaTime).hours);
-    refs.minutes.textContent = addLeadingZero(convertMs(deltaTime).minutes);
-    refs.seconds.textContent = addLeadingZero(convertMs(deltaTime).seconds);
+    refs.daysCount.textContent = addLeadingZero(convertMs(deltaTime).days);
+    refs.hoursCount.textContent = addLeadingZero(convertMs(deltaTime).hours);
+    refs.minutesCount.textContent = addLeadingZero(convertMs(deltaTime).minutes);
+    refs.secondsCount.textContent = addLeadingZero(convertMs(deltaTime).seconds);
 };
