@@ -4,7 +4,7 @@ const refs ={
     body : document.querySelector('body')
 };
 
-let timerId = null;
+let intervalId = null;
 
 
 refs.startButton.addEventListener('click', onPutStart);
@@ -16,7 +16,7 @@ function onPutStart(evt) {
     refs.startButton.style.disabled = false;
     refs.startButton.style.color = '#666666';
 
-    timerId = setInterval(() => {
+    intervalId = setInterval(() => {
     const changeColor = getRandomHexColor();
     refs.body.style.background = changeColor;   
     }, 1000);
@@ -25,7 +25,7 @@ function onPutStart(evt) {
 
 function onPutStop(evt){
     evt.preventDefault();
-    clearInterval(timerId);
+    clearInterval(intervalId);
 
     refs.startButton.style.disabled = true;
     refs.startButton.style.color = '#000000';
